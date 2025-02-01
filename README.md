@@ -11,7 +11,7 @@ A Markdown-to-PDF Editor web app built with ReactJS and TypeScript. Write in Mar
 ## 🔧 Installation
 1. Clone the repo:
    ```bash
-   git clone https://github.com/yourusername/MDtoPDF.git
+   git clone https://github.com/uttaran-das/MDtoPDF
    ```
 2. Install dependencies:
    ```bash
