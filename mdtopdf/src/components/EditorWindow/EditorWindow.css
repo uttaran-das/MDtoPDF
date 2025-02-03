@@ -1,0 +1,213 @@
+/* Global Reset */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+    color-scheme: light dark;
+    color: rgba(255, 255, 255, 0.87);
+    background-color: #242424;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Layout Structure */
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* Main Container */
+.editor-container {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 30px;
+    width: 100vw;
+    height: 100vh;
+    padding: 30px;
+    margin: 0 auto;
+    max-width: 1600px;
+    box-sizing: border-box;
+}
+
+/* Panes */
+.editor-pane,
+.preview-pane {
+    width: 100%;
+    height: 100%;
+    background-color: #2d2d2d;
+    border-radius: 12px;
+    padding: 25px;
+    overflow: auto;
+    margin: 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Textarea */
+.markdown-editor {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    resize: none;
+    color: #e0e0e0;
+    font-family: 'Fira Code', monospace;
+    font-size: 14px;
+    line-height: 1.7;
+    padding: 15px;
+    margin: 0;
+}
+
+/* Preview Content */
+.markdown-preview {
+    padding: 15px;
+    line-height: 1.7;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .editor-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 20px;
+        height: auto;
+        min-height: 100vh;
+    }
+
+    .editor-pane,
+    .preview-pane {
+        min-height: 400px;
+        padding: 20px;
+        border-radius: 8px;
+    }
+
+    .markdown-editor {
+        padding: 12px;
+        font-size: 15px;
+    }
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #4a4a4a;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-track {
+    background: #2d2d2d;
+}
+
+/* Code block styling */
+.markdown-preview pre {
+    background-color: #1e1e1e;
+    padding: 16px;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin: 16px 0;
+}
+
+.markdown-preview code {
+    font-family: 'Fira Code', monospace;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* Inline code */
+.markdown-preview code:not(pre code) {
+    background-color: #2d2d2d;
+    padding: 2px 4px;
+    border-radius: 4px;
+    color: #e0e0e0;
+}
+
+/* Syntax highlighting */
+.hljs {
+    background: transparent !important;
+}
+
+/* Headings */
+.markdown-preview h1,
+.markdown-preview h2,
+.markdown-preview h3,
+.markdown-preview h4,
+.markdown-preview h5,
+.markdown-preview h6 {
+    margin: 1.5em 0 0.5em 0;
+    padding: 0;
+    line-height: 1.2;
+}
+
+.markdown-preview h1 {
+    font-size: 2em;
+    border-bottom: 2px solid #444;
+    padding-bottom: 0.3em;
+}
+
+.markdown-preview h2 {
+    font-size: 1.75em;
+    border-bottom: 1px solid #444;
+    padding-bottom: 0.2em;
+}
+
+.markdown-preview h3 {
+    font-size: 1.5em;
+}
+
+.markdown-preview h4 {
+    font-size: 1.25em;
+}
+
+/* Lists */
+.markdown-preview ul,
+.markdown-preview ol {
+    margin: 1em 0;
+    padding-left: 2em;
+}
+
+.markdown-preview li {
+    margin: 0.5em 0;
+    padding-left: 0.5em;
+}
+
+/* Unordered list bullets */
+.markdown-preview ul {
+    list-style-type: disc;
+}
+
+/* Ordered list numbers */
+.markdown-preview ol {
+    list-style-type: decimal;
+}
+
+/* Nested lists */
+.markdown-preview ul ul,
+.markdown-preview ol ul {
+    list-style-type: circle;
+}
+
+.markdown-preview ol ol,
+.markdown-preview ul ol {
+    list-style-type: lower-roman;
+}
+
+/* Paragraphs */
+.markdown-preview p {
+    margin: 1em 0;
+    line-height: 1.6;
+}
